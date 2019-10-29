@@ -1,0 +1,1 @@
+Teacher.destroy_all

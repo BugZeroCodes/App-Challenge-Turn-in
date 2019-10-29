@@ -1,0 +1,39 @@
+<p id="notice" class='alert alert-warning'><%= notice %></p>
+<h1>Select a School</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>State</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.name %></td>
+        <% if school.city.blank? %>
+        <td>Unspecified</td>
+        <% else %>
+        <td><%= school.city %></td>
+        <% end %>
+        <% if school.state.blank? %>
+        <td>Unspecified</td>
+        <% else %>
+        <td><%= school.state %></td>
+        <% end %>
+        <td><%= link_to 'Show', school, class: 'btn btn-warning' %></td>
+        <% if current_student.id == school.student.id %>
+        <td><%= link_to 'Edit', edit_school_path(school), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Delete', school, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add My School', new_school_path, class: 'btn btn-warning' %>
