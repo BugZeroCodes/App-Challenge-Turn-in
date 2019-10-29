@@ -17,8 +17,6 @@ class TeachersController < ApplicationController
   # GET /teachers/new
   def new
     @teacher = Teacher.new
-    # This line actually sends email to teacher. Locate this code to appropriate place
-
   end
 
   # GET /teachers/1/edit
@@ -61,7 +59,7 @@ class TeachersController < ApplicationController
   def destroy
     @teacher.destroy
     respond_to do |format|
-      format.html { redirect_to teachers_url, notice: 'Teacher was successfully destroyed.' }
+      format.html { redirect_to teachers_url, notice: 'Teacher was successfully deleted.' }
       format.json { head :no_content }
     end
   end
