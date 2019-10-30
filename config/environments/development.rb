@@ -40,8 +40,8 @@ config.action_mailer.perform_caching = false
   config.action_mailer.smtp_settings = {
     :address => 'smtp.gmail.com',
     :port => 587,
-    :user_name => 'iamverygrateful500@gmail.com',
-    :password => '12341234dert',
+    :user_name => 'iamnotimportant800@gmail.com',
+    :password => 'testsubjects',
     :authentication => 'plain',
     :enabled_starttls_auto => true
   }
